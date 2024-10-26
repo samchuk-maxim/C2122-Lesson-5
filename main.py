@@ -6,7 +6,8 @@ class Employee:
         self.Name = name
         self.Age = age
         self.Experience = experience
-        self.Salary= experience*400+8000
+        self.Rate = 400
+        self.Salary= self.Experience * self.Rate + 8000
 
     def print_employee_info(self):
         print("Прізвище:", self.Surname)
@@ -25,6 +26,7 @@ emloyee1.to_receive_a_salary()
 class Driver(Employee):
     def __init__(self,surname, name, age, experience,transport):
         super().__init__(surname,name,age,experience)
+        self.Rate=1100
         self.Transport=transport
     def show_transport(self):
         print("Транспорт:", self.Transport)
