@@ -1,5 +1,10 @@
 print("Lesson 5")
 
+import logging
+logging.basicConfig(level=logging.DEBUG,
+                    filename="logs.log",
+                    filemode="w",
+                    format="%(asctime)s: %(levelname)s  - %(message)s")
 class Employee:
     def __init__(self, surname, name, age, experience):
         self.Surname = surname
@@ -92,4 +97,4 @@ try:
         raise TypeError("Transport is not string")
 
 except Exception as error:
-    print(f"Error text:{error}")
+    logging.exception(f"Error text:{error}")
